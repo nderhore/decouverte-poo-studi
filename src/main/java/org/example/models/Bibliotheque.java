@@ -26,6 +26,9 @@ public class Bibliotheque {
         this.id_bibliotheque = id_bibliotheque;
     }
 
+    public void add_livre(Livre livre){
+        this.livreList.add(livre);
+    }
     public List<Livre> getLivreList() {
         return livreList;
     }

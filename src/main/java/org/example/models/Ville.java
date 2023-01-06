@@ -1,5 +1,6 @@
 package org.example.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Ville {
@@ -20,6 +21,18 @@ public class Ville {
         this.pays = pays;
         this.code_postal = code_postal;
         this.bibliothequeList = bibliothequeList;
+    }
+
+    public Ville(int id_ville, String nom, String pays, String code_postal) {
+        this.id_ville = id_ville;
+        this.nom = nom;
+        this.pays = pays;
+        this.code_postal = code_postal;
+        this.bibliothequeList = new ArrayList<>();
+    }
+
+    public void addBibliotheque(Bibliotheque bibliotheque){
+        this.bibliothequeList.add(bibliotheque);
     }
 
     public List<Bibliotheque> getBibliothequeList() {
@@ -60,5 +73,11 @@ public class Ville {
 
     public void setCode_postal(String code_postal) {
         this.code_postal = code_postal;
+    }
+
+
+    @Override
+    public String toString(){
+        return "Bonjour, je suis la ville " + this.nom + " et je possede " + this.bibliothequeList.size() + " bibliotheque";
     }
 }

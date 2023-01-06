@@ -1,5 +1,9 @@
 package org.example;
 
+import org.example.models.*;
+
+import java.util.ArrayList;
+
 /**
  * Hello world!
  *
@@ -8,6 +12,28 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hellocdcdcd World!" );
+        //Creation d'une instance de ville
+        Ville maVille = new Ville(1,"MaVille","France","93000");
+        Ville maVilleDeux = new Ville(2,"baptiste","France","93000");
+
+        //creation d'une instance de bibliotheque
+        Bibliotheque maBibliotheque = new Bibliotheque(1,new ArrayList<>());
+
+        //Creation d'un editeur
+        Editeur editeur = new Editeur(1,"Hachette");
+
+        //Creation d'un auteur
+        Auteur auteur = new Auteur(1,"v","baptiste");
+        ArrayList<Auteur> auteurs = new ArrayList<>();
+        auteurs.add(auteur);
+
+        Livre livre = new Livre(1,"FC POO","live POO",editeur,auteurs);
+
+        maBibliotheque.add_livre(livre);
+
+        maVille.addBibliotheque(maBibliotheque);
+
+        System.out.println(maVille);
+
     }
 }
