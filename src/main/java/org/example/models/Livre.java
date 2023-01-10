@@ -58,4 +58,15 @@ public class Livre {
     public void setEditeur(Editeur editeur) {
         this.editeur = editeur;
     }
+
+    @Override
+    public String toString(){
+
+        String auteurs = "";
+        for(Auteur auteur : auteurList){
+            auteurs = auteurs + auteur.toString() + ",";
+        }
+        return "Je possede le titre " + this.titre + ", qui traite de " + this.resume +"," +
+                " edité par " + this.editeur + ", écrit par " + auteurs;
+    }
 }

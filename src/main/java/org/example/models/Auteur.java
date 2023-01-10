@@ -37,4 +37,8 @@ public class Auteur {
     public void setPrenom(String prenom) {
         this.prenom = prenom;
     }
+
+    public String toString(){
+        return this.nom + " " + this.prenom;
+    }
 }

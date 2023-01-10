@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.dao.BookDao;
+import org.example.dao.impl.BookDaoImpl;
 import org.example.models.*;
 
 import java.util.ArrayList;
@@ -34,6 +36,17 @@ public class App
         maVille.addBibliotheque(maBibliotheque);
 
         System.out.println(maVille);
+
+        //Je crée une instance BookDaoImpl qui est une version du contrat BookDao
+        BookDao bookDao = new BookDaoImpl();
+
+        //J'ajoute un livre
+        bookDao.createBook(livre);
+        for(Livre livreUn : bookDao.getAllBook()){
+            System.out.println(livreUn);
+        }
+
+        bookDao.deleteBook(livre.getId_livre());
 
     }
 }
